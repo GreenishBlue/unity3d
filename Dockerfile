@@ -68,13 +68,7 @@ RUN wget -nv ${UNITY_DOWNLOAD_URL} -O UnitySetup && \
     --download-location=/tmp/unity \
     --components=$COMPONENTS && \
     # remove setup
-    rm UnitySetup && \
-    # make a directory for the certificate Unity needs to run
-    mkdir -p $HOME/.local/share/unity3d/Certificates/
-
-ADD CACerts.pem $HOME/.local/share/unity3d/Certificates/
+    rm UnitySetup
 
 # Clean up
 RUN rm -rf /tmp/* /var/tmp/*
-
-# RUN /opt/Unity/Editor/Unity xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' -batchmode -projectPath /
