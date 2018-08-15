@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install tzdata
 RUN echo "Europe/Dublin" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
 RUN apt-get update -qq; \
-  apt-get install -qq -y \
+  apt-get -qq -y install \
   gconf-service \
   lib32gcc1 \
   lib32stdc++6 \
@@ -65,7 +65,6 @@ RUN wget -nv ${UNITY_DOWNLOAD_URL} -O UnitySetup && \
     # install unity with required components
     ./UnitySetup --unattended \
     --install-location=/opt/Unity \
-    --verbose \
     --download-location=/tmp/unity \
     --components=$COMPONENTS && \
     # remove setup
@@ -78,4 +77,4 @@ ADD CACerts.pem $HOME/.local/share/unity3d/Certificates/
 # Clean up
 RUN rm -rf /tmp/* /var/tmp/*
 
-RUN /opt/Unity/Editor/Unity xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' -batchmode -projectPath /
+# RUN /opt/Unity/Editor/Unity xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' -batchmode -projectPath /
