@@ -1,6 +1,6 @@
 FROM ubuntu
 
-ARG UNITY_DOWNLOAD_URL=https://beta.unity3d.com/download/fcee59332301/UnitySetup-2018.2.2f1
+ARG UNITY_DOWNLOAD_URL=https://beta.unity3d.com/download/fba045906327/UnitySetup-2018.2.3f1
 ARG COMPONENTS=Unity,Windows-Mono
 
 RUN export DEBIAN_FRONTEND=noninteractive
