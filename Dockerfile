@@ -72,3 +72,4 @@ RUN wget -nv ${UNITY_DOWNLOAD_URL} -O UnitySetup && \
 
 # Clean up
 RUN rm -rf /tmp/* /var/tmp/*
+ENTRYPOINT ["/opt/Unity/Editor/Unity"]
