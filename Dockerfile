@@ -72,4 +72,4 @@ RUN wget -nv ${UNITY_DOWNLOAD_URL} -O UnitySetup && \
 
 # Clean up
 RUN rm -rf /tmp/* /var/tmp/*
-ENTRYPOINT ["/opt/Unity/Editor/Unity"]
+ENTRYPOINT ["xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' /opt/Unity/Editor/Unity"]
